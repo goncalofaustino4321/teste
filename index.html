@@ -33,7 +33,7 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Bem-vindo ao @goncas_pro650</h1>
-            <p>Conteúdo de qualidade, tutoriais e entretenimento</p>
+            <p>Conteúdo de qualidade, tutoriais e entretenimento direto do YouTube</p>
             <div class="cta-buttons">
                 <a href="#videos" class="btn btn-primary">Ver Vídeos</a>
                 <a href="https://www.youtube.com/@goncas_pro650" target="_blank" class="btn btn-secondary">Inscrever-se</a>
@@ -56,15 +56,15 @@
                     <p>O @goncas_pro650 é um canal dedicado a trazer conteúdo de alta qualidade para nossa comunidade. Criamos vídeos sobre diversos temas, sempre focando em fornecer valor e entretenimento aos nossos espectadores.</p>
                     <div class="stats">
                         <div class="stat-item">
-                            <h4>0+</h4>
+                            <h4 id="subscriber-count">-</h4>
                             <p>Inscritos</p>
                         </div>
                         <div class="stat-item">
-                            <h4>0+</h4>
+                            <h4 id="video-count">-</h4>
                             <p>Vídeos</p>
                         </div>
                         <div class="stat-item">
-                            <h4>0+</h4>
+                            <h4 id="view-count">-</h4>
                             <p>Visualizações</p>
                         </div>
                     </div>
@@ -88,7 +88,7 @@
                     <div class="feature">
                         <i class="fas fa-heart"></i>
                         <h4>Conteúdo Diverso</h4>
-                        <p>Variidade de temas para todos os interesses</p>
+                        <p>Variedade de temas para todos os interesses</p>
                     </div>
                 </div>
             </div>
@@ -99,84 +99,15 @@
     <section id="videos" class="videos">
         <div class="container">
             <h2>Últimos Vídeos</h2>
-            <div class="videos-grid">
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <i class="fab fa-youtube"></i>
-                        <span class="duration">12:34</span>
-                    </div>
-                    <div class="video-info">
-                        <h4>Título do Vídeo #1</h4>
-                        <p class="views">1.2K visualizações • há 2 dias</p>
-                        <p class="description">Descrição do primeiro vídeo...</p>
-                        <a href="https://www.youtube.com/@goncas_pro650" target="_blank" class="watch-btn">Assistir</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <i class="fab fa-youtube"></i>
-                        <span class="duration">15:20</span>
-                    </div>
-                    <div class="video-info">
-                        <h4>Título do Vídeo #2</h4>
-                        <p class="views">2.5K visualizações • há 4 dias</p>
-                        <p class="description">Descrição do segundo vídeo...</p>
-                        <a href="https://www.youtube.com/@goncas_pro650" target="_blank" class="watch-btn">Assistir</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <i class="fab fa-youtube"></i>
-                        <span class="duration">18:45</span>
-                    </div>
-                    <div class="video-info">
-                        <h4>Título do Vídeo #3</h4>
-                        <p class="views">980 visualizações • há 1 semana</p>
-                        <p class="description">Descrição do terceiro vídeo...</p>
-                        <a href="https://www.youtube.com/@goncas_pro650" target="_blank" class="watch-btn">Assistir</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <i class="fab fa-youtube"></i>
-                        <span class="duration">10:15</span>
-                    </div>
-                    <div class="video-info">
-                        <h4>Título do Vídeo #4</h4>
-                        <p class="views">3.1K visualizações • há 1 semana</p>
-                        <p class="description">Descrição do quarto vídeo...</p>
-                        <a href="https://www.youtube.com/@goncas_pro650" target="_blank" class="watch-btn">Assistir</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <i class="fab fa-youtube"></i>
-                        <span class="duration">22:00</span>
-                    </div>
-                    <div class="video-info">
-                        <h4>Título do Vídeo #5</h4>
-                        <p class="views">1.8K visualizações • há 2 semanas</p>
-                        <p class="description">Descrição do quinto vídeo...</p>
-                        <a href="https://www.youtube.com/@goncas_pro650" target="_blank" class="watch-btn">Assistir</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <i class="fab fa-youtube"></i>
-                        <span class="duration">14:30</span>
-                    </div>
-                    <div class="video-info">
-                        <h4>Título do Vídeo #6</h4>
-                        <p class="views">2.3K visualizações • há 2 semanas</p>
-                        <p class="description">Descrição do sexto vídeo...</p>
-                        <a href="https://www.youtube.com/@goncas_pro650" target="_blank" class="watch-btn">Assistir</a>
-                    </div>
-                </div>
+            <div class="loading-spinner" id="loading-spinner">
+                <i class="fas fa-spinner"></i> Carregando vídeos...
+            </div>
+            <div class="videos-grid" id="videos-grid">
+                <!-- Vídeos serão carregados aqui automaticamente -->
+            </div>
+            <div class="error-message" id="error-message" style="display:none;">
+                <p>Não conseguimos carregar os vídeos. Por favor, tente novamente mais tarde.</p>
+                <a href="https://www.youtube.com/@goncas_pro650" target="_blank" class="btn btn-primary">Ver no YouTube</a>
             </div>
         </div>
     </section>
@@ -202,14 +133,14 @@
                         <p><a href="https://www.youtube.com/@goncas_pro650" target="_blank">@goncas_pro650</a></p>
                     </div>
                     <div class="info-item">
-                        <i class="fab fa-instagram"></i>
-                        <h4>Instagram</h4>
-                        <p><a href="https://instagram.com" target="_blank">@goncas_pro650</a></p>
+                        <i class="fas fa-envelope"></i>
+                        <h4>Email</h4>
+                        <p><a href="mailto:contato@goncas-pro650.com">Enviar Email</a></p>
                     </div>
                     <div class="info-item">
-                        <i class="fab fa-twitter"></i>
-                        <h4>Twitter</h4>
-                        <p><a href="https://twitter.com" target="_blank">@goncas_pro650</a></p>
+                        <i class="fas fa-globe"></i>
+                        <h4>Website</h4>
+                        <p><a href="https://www.youtube.com/@goncas_pro650" target="_blank">Visite nosso site</a></p>
                     </div>
                 </div>
                 <form class="contact-form">
@@ -227,9 +158,7 @@
         <div class="container">
             <p>&copy; 2026 @goncas_pro650 - Todos os direitos reservados</p>
             <div class="social-links">
-                <a href="https://www.youtube.com/@goncas_pro650" target="_blank"><i class="fab fa-youtube"></i></a>
-                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.youtube.com/@goncas_pro650" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
     </footer>
